@@ -119,3 +119,12 @@ Resources are the only documents stored in MongoDB. Locks on a resource are stor
 }
 ```
 Note: shared locks are stored as an array instead of a map (keyed on lockId) so that shared lock fields can be indexed.
+
+## Tests
+By default, tests expect a MongoDB instance to be running at "localhost:3000", and they write to a db "test" and collection "locks". These defaults, however, can be overwritten with environment variables.
+```
+export TEST_MONGO_URL="your_url"
+export TEST_MONGO_DB="your_db"
+export TEST_MONGO_COLLECTION="your_collection"
+```
+Be aware that the tests delete all documents from the db.collection after they run.
