@@ -90,7 +90,7 @@ Here is a list of rules that the locking behavior follows
 
 ## Schema
 Resources are the only documents stored in MongoDB. Locks on a resource are stored within the resource documents, like so:
-```mongo
+```json
 {
         "resource" : "resource1",
         "exclusive" : {
